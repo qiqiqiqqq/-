@@ -1,0 +1,29 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/html/
+    suffix: .html
+  datasource:
+    url: jdbc:mysql://39.96.50.240:3307/waimai
+    username: root
+    password: liyuqi0709
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 1000
+    initialSize: 100
+    maxWait: 60000
+    minIdle: 500
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath:/mapping/*.xml
+  type-aliases-package: com.liyuqi.pojo
+  configuration:
+    map-underscore-to-camel-case: true
